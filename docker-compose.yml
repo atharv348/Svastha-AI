@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   svasthya-ai:
-    image: joshi343/svasthya-ai:latest
+    image: your_docker_desktop_username/svasthya-ai:latest
     container_name: svasthya-ai
     ports:
       - "80:80"
