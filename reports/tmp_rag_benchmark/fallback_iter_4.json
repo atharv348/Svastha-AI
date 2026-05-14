@@ -1,0 +1,204 @@
+{
+  "base_url": "http://127.0.0.1:8002",
+  "mode": "full_rag_non_fallback_requested",
+  "steps": {
+    "login": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 267.31,
+      "payload": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzY2NjI1MTgsInN1YiI6ImFkbWluIn0.Jv-rpbqVAEf4I3GAlQE8zIRFZBW3XpqfJwCTNURS5X0",
+        "token_type": "bearer",
+        "user": {
+          "username": "admin",
+          "email": "admin@sehatsaathi.com",
+          "full_name": "Admin User",
+          "id": 1,
+          "created_at": "2026-04-09T19:34:20.267753",
+          "age": null,
+          "gender": null,
+          "height": null,
+          "current_weight": null,
+          "target_weight": null,
+          "fitness_level": "intermediate",
+          "fitness_goal": "maintenance",
+          "preferred_language": "English",
+          "streak_count": 0,
+          "last_checkin": null
+        }
+      }
+    },
+    "seed_catalog": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 4.6,
+      "payload": {
+        "message": "Catalog ready",
+        "stats": {
+          "diseases": 3,
+          "symptoms": 3,
+          "medicines": 3
+        }
+      }
+    },
+    "get_diseases": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 3.03,
+      "payload": {
+        "Cardiovascular": [
+          {
+            "id": 3,
+            "name": "Hypertension",
+            "severity_level": "moderate",
+            "icd_10_code": "I10",
+            "description": "Persistently elevated blood pressure"
+          }
+        ],
+        "Infectious": [
+          {
+            "id": 2,
+            "name": "Dengue",
+            "severity_level": "severe",
+            "icd_10_code": "A90",
+            "description": "Mosquito-borne viral disease"
+          },
+          {
+            "id": 1,
+            "name": "Viral Fever",
+            "severity_level": "mild",
+            "icd_10_code": "B34.9",
+            "description": "Common viral fever with fatigue and body ache"
+          }
+        ]
+      }
+    },
+    "get_symptoms": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 2.62,
+      "payload": [
+        {
+          "id": 3,
+          "name": "Body Ache",
+          "description": "Muscle and joint ache",
+          "body_part": "General"
+        },
+        {
+          "id": 1,
+          "name": "Fever",
+          "description": "Elevated body temperature",
+          "body_part": "General"
+        },
+        {
+          "id": 2,
+          "name": "Headache",
+          "description": "Persistent head pain",
+          "body_part": "Head"
+        }
+      ]
+    },
+    "diagnose": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 22.29,
+      "payload": {
+        "record_id": 15,
+        "diagnosis": {
+          "diagnosis": "Fallback triage summary for age 34: symptoms include Fever, Headache, Body Ache, fatigue, mild dizziness. Likely considerations: Dengue, Hypertension. Hydrate, monitor warning signs, and consult a clinician for confirmation.",
+          "context_sources": [
+            "fallback-rule-engine"
+          ],
+          "confidence": "Low",
+          "severity_assessment": "moderate"
+        },
+        "catalog_medicines": [
+          {
+            "id": 2,
+            "name": "ORS",
+            "generic_name": "Oral Rehydration Salts",
+            "category": "OTC",
+            "disease_id": 2,
+            "dosage": "1 sachet in 1L water",
+            "frequency": "Sips through the day",
+            "duration": "As needed",
+            "side_effects": [],
+            "contraindications": [],
+            "age_restrictions": "All ages",
+            "pregnancy_safe": true,
+            "price_inr": 20.0,
+            "prescription_required": false
+          },
+          {
+            "id": 3,
+            "name": "Amlodipine",
+            "generic_name": "Amlodipine",
+            "category": "Prescription",
+            "disease_id": 3,
+            "dosage": "5 mg",
+            "frequency": "Once daily",
+            "duration": "As prescribed",
+            "side_effects": [
+              "ankle swelling",
+              "dizziness"
+            ],
+            "contraindications": [
+              "severe hypotension"
+            ],
+            "age_restrictions": "Adult use",
+            "pregnancy_safe": false,
+            "price_inr": 70.0,
+            "prescription_required": true
+          }
+        ]
+      }
+    },
+    "medicine_recommendations": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 3.21,
+      "payload": {
+        "catalog_recommendations": [
+          {
+            "id": 3,
+            "name": "Amlodipine",
+            "generic_name": "Amlodipine",
+            "category": "Prescription",
+            "disease_id": 3,
+            "dosage": "5 mg",
+            "frequency": "Once daily",
+            "duration": "As prescribed",
+            "side_effects": [
+              "ankle swelling",
+              "dizziness"
+            ],
+            "contraindications": [
+              "severe hypotension"
+            ],
+            "age_restrictions": "Adult use",
+            "pregnancy_safe": false,
+            "price_inr": 70.0,
+            "prescription_required": true
+          }
+        ],
+        "ai_recommendations": "Fallback medicine guidance for diagnosis 'viral fever with headache' (age 34). Use only clinician-approved treatment, consider symptom-relief OTC options where appropriate, and seek urgent care if red-flag symptoms appear. Avoid known allergens: none.",
+        "safety_note": "AI guidance is assistive only; final prescription must be clinician-approved."
+      }
+    }
+  },
+  "overall": {
+    "total_steps": 6,
+    "passed_count": 6,
+    "failed_count": 0,
+    "passed_steps": [
+      "login",
+      "seed_catalog",
+      "get_diseases",
+      "get_symptoms",
+      "diagnose",
+      "medicine_recommendations"
+    ],
+    "failed_steps": [],
+    "fallback_detected": true
+  }
+}

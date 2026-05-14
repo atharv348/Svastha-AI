@@ -1,0 +1,206 @@
+{
+  "base_url": "http://127.0.0.1:8002",
+  "mode": "full_rag_non_fallback_requested",
+  "steps": {
+    "login": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 194.2,
+      "payload": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzY2NjI2NjEsInN1YiI6ImFkbWluIn0.YMeMCG0Yvsg7WQ8LCG9DU3hPPWs7it48aCv52HYYg_0",
+        "token_type": "bearer",
+        "user": {
+          "username": "admin",
+          "email": "admin@sehatsaathi.com",
+          "full_name": "Admin User",
+          "id": 1,
+          "created_at": "2026-04-09T19:34:20.267753",
+          "age": null,
+          "gender": null,
+          "height": null,
+          "current_weight": null,
+          "target_weight": null,
+          "fitness_level": "intermediate",
+          "fitness_goal": "maintenance",
+          "preferred_language": "English",
+          "streak_count": 0,
+          "last_checkin": null
+        }
+      }
+    },
+    "seed_catalog": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 4.08,
+      "payload": {
+        "message": "Catalog ready",
+        "stats": {
+          "diseases": 3,
+          "symptoms": 3,
+          "medicines": 3
+        }
+      }
+    },
+    "get_diseases": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 2.63,
+      "payload": {
+        "Cardiovascular": [
+          {
+            "id": 3,
+            "name": "Hypertension",
+            "severity_level": "moderate",
+            "icd_10_code": "I10",
+            "description": "Persistently elevated blood pressure"
+          }
+        ],
+        "Infectious": [
+          {
+            "id": 2,
+            "name": "Dengue",
+            "severity_level": "severe",
+            "icd_10_code": "A90",
+            "description": "Mosquito-borne viral disease"
+          },
+          {
+            "id": 1,
+            "name": "Viral Fever",
+            "severity_level": "mild",
+            "icd_10_code": "B34.9",
+            "description": "Common viral fever with fatigue and body ache"
+          }
+        ]
+      }
+    },
+    "get_symptoms": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 2.38,
+      "payload": [
+        {
+          "id": 3,
+          "name": "Body Ache",
+          "description": "Muscle and joint ache",
+          "body_part": "General"
+        },
+        {
+          "id": 1,
+          "name": "Fever",
+          "description": "Elevated body temperature",
+          "body_part": "General"
+        },
+        {
+          "id": 2,
+          "name": "Headache",
+          "description": "Persistent head pain",
+          "body_part": "Head"
+        }
+      ]
+    },
+    "diagnose": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 14902.5,
+      "payload": {
+        "record_id": 21,
+        "diagnosis": {
+          "diagnosis": "**Differential Diagnosis:**\nBased on the symptoms of fever, headache, body ache, fatigue, and mild dizziness, the following conditions are considered:\n\n1. **Viral Fever**: The symptoms align with common viral fever presentations, which could be due to various viral infections prevalent in Delhi.\n2. **Dengue**: Given the symptoms of fever, headache, and body ache, dengue is a possible consideration, especially in Delhi where dengue is endemic. However, the absence of specific symptoms like retro-orbital pain and severe myalgia makes it less likely.\n3. **Malaria**: Although less likely, malaria cannot be ruled out entirely without further investigation, as it can present with similar symptoms.\n4. **Hypertension**: While hypertension is a suspected condition, it is unlikely to be the primary cause of the acute symptoms presented.\n\n**Investigations:**\nTo narrow down the diagnosis, the following investigations are suggested:\n\n1. **Complete Blood Count (CBC)**: To check for platelet count, which can be indicative of dengue or other infections.\n2. **Malaria Rapid Diagnostic Test (RDT)**: To rule out malaria.\n3. **Dengue NS1 Antigen Test**: To confirm dengue infection.\n4. **Blood Pressure Monitoring**: To assess blood pressure and determine if hypertension is a contributing factor.\n\n**Emergency Red Flags:**\nThe patient should be monitored for the following emergency red flags:\n\n1. **Severe headache or confusion**\n2. **Difficulty breathing or severe dizziness**\n3. **Persistent vomiting or severe abdominal pain**\n4. **Mucosal bleeding or lethargy**\n\n**Practical Immediate Actions:**\nThe patient is advised to:\n\n1. **Stay hydrated** by drinking plenty of fluids, such as water, electrolyte-rich beverages, or oral rehydration solutions (ORS).\n2. **Rest** and avoid strenuous activities.\n3. **Take paracetamol** as directed for fever and headache management.\n4. **Monitor temperature** and report any significant changes.\n\n**Mandatory In-Person Medical Consultation:**\nThe patient should consult a doctor in person if:\n\n1. **Symptoms worsen or persist** beyond 3-4 days.\n2. **Emergency red flags** are present.\n3. **Investigation results** indicate a need for further evaluation or treatment.\n\n**Final Guidance:**\nGiven the moderate severity of symptoms, the patient should consult a doctor in person within the next 24-48 hours to determine the underlying cause and receive guidance on management. If emergency red flags are present, the patient should seek immediate medical attention at the nearest hospital or primary health center (PHC).",
+          "context_sources": [
+            "ICMR Notes",
+            "c:\\Users\\devil\\Documents\\trae_projects\\prag 2.0\\pragyantra\\Hackathon\\backend\\data\\medical_knowledge\\clinical_guidelines.md",
+            "c:\\Users\\devil\\Documents\\trae_projects\\prag 2.0\\pragyantra\\Hackathon\\backend\\data\\medical_knowledge\\india_public_health.md"
+          ],
+          "confidence": "Medium",
+          "severity_assessment": "moderate"
+        },
+        "catalog_medicines": [
+          {
+            "id": 2,
+            "name": "ORS",
+            "generic_name": "Oral Rehydration Salts",
+            "category": "OTC",
+            "disease_id": 2,
+            "dosage": "1 sachet in 1L water",
+            "frequency": "Sips through the day",
+            "duration": "As needed",
+            "side_effects": [],
+            "contraindications": [],
+            "age_restrictions": "All ages",
+            "pregnancy_safe": true,
+            "price_inr": 20.0,
+            "prescription_required": false
+          },
+          {
+            "id": 3,
+            "name": "Amlodipine",
+            "generic_name": "Amlodipine",
+            "category": "Prescription",
+            "disease_id": 3,
+            "dosage": "5 mg",
+            "frequency": "Once daily",
+            "duration": "As prescribed",
+            "side_effects": [
+              "ankle swelling",
+              "dizziness"
+            ],
+            "contraindications": [
+              "severe hypotension"
+            ],
+            "age_restrictions": "Adult use",
+            "pregnancy_safe": false,
+            "price_inr": 70.0,
+            "prescription_required": true
+          }
+        ]
+      }
+    },
+    "medicine_recommendations": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 15150.9,
+      "payload": {
+        "catalog_recommendations": [
+          {
+            "id": 3,
+            "name": "Amlodipine",
+            "generic_name": "Amlodipine",
+            "category": "Prescription",
+            "disease_id": 3,
+            "dosage": "5 mg",
+            "frequency": "Once daily",
+            "duration": "As prescribed",
+            "side_effects": [
+              "ankle swelling",
+              "dizziness"
+            ],
+            "contraindications": [
+              "severe hypotension"
+            ],
+            "age_restrictions": "Adult use",
+            "pregnancy_safe": false,
+            "price_inr": 70.0,
+            "prescription_required": true
+          }
+        ],
+        "ai_recommendations": "For a 34-year-old patient diagnosed with viral fever and headache, the following guidance is provided, keeping in mind that final prescription decisions require a licensed clinician.\n\n### OTC Options:\n1. **Paracetamol (Acetaminophen)**: For fever and headache relief. It's crucial to follow the recommended dosage and not exceed the maximum daily limit.\n2. **Hydration**: Encourage the intake of plenty of fluids, such as water, clear broths, or electrolyte-rich beverages like coconut water or oral rehydration solutions (ORS) to prevent dehydration.\n3. **Rest**: Adequate rest is essential for recovery.\n\n### Prescription Categories to Discuss with Doctor:\n1. **Antipyretics**: If paracetamol is not sufficient for fever control, discuss other options with your doctor.\n2. **Anti-emetics**: If nausea or vomiting is present, to prevent dehydration.\n3. **Pain Relievers**: For severe headache or body aches, but always under the guidance of a clinician.\n\n### Ayurvedic/Supportive Options:\n1. **Turmeric**: Known for its anti-inflammatory properties.\n2. **Ginger**: Can help with nausea and has anti-inflammatory effects.\n3. **Tulsi (Holy Basil)**: May help in reducing stress and boosting immunity.\n4. **Giloy**: Believed to have antipyretic properties.\n5. **Ashwagandha**: For stress reduction and overall well-being.\n6. **Warm Liquids**: Such as tea or broth, can be soothing.\n\n### Major Contraindications and Red Flags:\n- **Allergic reactions** to any medication.\n- **Persistent high fever** not responding to medication.\n- **Confusion, disorientation**, or signs of dehydration.\n- **Severe abdominal pain, persistent vomiting, mucosal bleeding, lethargy, or low urine output**, which could indicate more serious conditions like dengue or other severe infections.\n- **Difficulty breathing, severe headache, or stiff neck**, which could indicate meningitis or other serious conditions.\n- **Chest pain or severe palpitations**, which could indicate cardiac issues.\n\n### Important Notes:\n- Always consult a healthcare provider before taking any medication, especially if you have any pre-existing conditions or are taking other medications.\n- Monitor your condition closely, and if you experience any red flag symptoms, seek immediate medical attention.\n- Follow local health guidelines and consult with a healthcare professional for personalized advice.\n\nRemember, while these suggestions can provide supportive care, the diagnosis and treatment of viral fever and its complications require the supervision of a licensed clinician.",
+        "safety_note": "AI guidance is assistive only; final prescription must be clinician-approved."
+      }
+    }
+  },
+  "overall": {
+    "total_steps": 6,
+    "passed_count": 6,
+    "failed_count": 0,
+    "passed_steps": [
+      "login",
+      "seed_catalog",
+      "get_diseases",
+      "get_symptoms",
+      "diagnose",
+      "medicine_recommendations"
+    ],
+    "failed_steps": [],
+    "fallback_detected": false
+  }
+}

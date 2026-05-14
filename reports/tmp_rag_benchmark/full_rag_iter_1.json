@@ -1,0 +1,428 @@
+{
+  "base_url": "http://127.0.0.1:8005",
+  "mode": "full_rag_non_fallback_requested",
+  "steps": {
+    "login": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 279.78,
+      "payload": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzY3MDQ2MDIsInN1YiI6ImFkbWluIn0.8vVaz-qLpAYpIVRxN4nj5uuMo3lzfEeVZssBKQFwO0w",
+        "token_type": "bearer",
+        "user": {
+          "username": "admin",
+          "email": "admin@sehatsaathi.com",
+          "full_name": "Admin User",
+          "id": 1,
+          "created_at": "2026-04-09T19:34:20.267753",
+          "age": null,
+          "gender": null,
+          "height": null,
+          "current_weight": null,
+          "target_weight": null,
+          "fitness_level": "intermediate",
+          "fitness_goal": "maintenance",
+          "preferred_language": "English",
+          "streak_count": 0,
+          "last_checkin": null
+        }
+      }
+    },
+    "seed_catalog": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 18.85,
+      "payload": {
+        "message": "Catalog ready",
+        "stats": {
+          "diseases": 18,
+          "symptoms": 27,
+          "medicines": 4
+        }
+      }
+    },
+    "get_diseases": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 4.9,
+      "payload": {
+        "Cardiovascular": [
+          {
+            "id": 3,
+            "name": "Hypertension",
+            "severity_level": "moderate",
+            "icd_10_code": "I10",
+            "description": "Persistently elevated blood pressure"
+          }
+        ],
+        "Gastrointestinal": [
+          {
+            "id": 12,
+            "name": "Food Poisoning",
+            "severity_level": "moderate",
+            "icd_10_code": "A05.9",
+            "description": "Illness caused by contaminated food or drink"
+          },
+          {
+            "id": 11,
+            "name": "Viral Gastroenteritis",
+            "severity_level": "moderate",
+            "icd_10_code": "A08.4",
+            "description": "Stomach and intestine infection causing loose stools and vomiting"
+          }
+        ],
+        "Infectious": [
+          {
+            "id": 13,
+            "name": "Conjunctivitis",
+            "severity_level": "mild",
+            "icd_10_code": "H10.9",
+            "description": "Eye infection or allergy causing redness and irritation"
+          },
+          {
+            "id": 2,
+            "name": "Dengue",
+            "severity_level": "severe",
+            "icd_10_code": "A90",
+            "description": "Mosquito-borne viral disease"
+          },
+          {
+            "id": 9,
+            "name": "Malaria",
+            "severity_level": "severe",
+            "icd_10_code": "B54",
+            "description": "Mosquito-borne parasitic disease with cyclic fever"
+          },
+          {
+            "id": 10,
+            "name": "Typhoid",
+            "severity_level": "moderate",
+            "icd_10_code": "A01.0",
+            "description": "Bacterial infection often spread through contaminated food or water"
+          },
+          {
+            "id": 1,
+            "name": "Viral Fever",
+            "severity_level": "mild",
+            "icd_10_code": "B34.9",
+            "description": "Common viral fever with fatigue and body ache"
+          }
+        ],
+        "Neurological": [
+          {
+            "id": 18,
+            "name": "Migraine",
+            "severity_level": "moderate",
+            "icd_10_code": "G43.9",
+            "description": "Recurring severe headaches with sensitivity to light"
+          }
+        ],
+        "Respiratory": [
+          {
+            "id": 14,
+            "name": "Acute Bronchitis",
+            "severity_level": "moderate",
+            "icd_10_code": "J20.9",
+            "description": "Inflammation of bronchial tubes causing cough and chest discomfort"
+          },
+          {
+            "id": 8,
+            "name": "Acute Sinusitis",
+            "severity_level": "moderate",
+            "icd_10_code": "J01.9",
+            "description": "Inflammation of sinuses causing pressure and congestion"
+          },
+          {
+            "id": 15,
+            "name": "Asthma Exacerbation",
+            "severity_level": "severe",
+            "icd_10_code": "J45.901",
+            "description": "Worsening asthma symptoms with breathing difficulty"
+          },
+          {
+            "id": 4,
+            "name": "Common Cold",
+            "severity_level": "mild",
+            "icd_10_code": "J00",
+            "description": "Upper respiratory viral infection with mild symptoms"
+          },
+          {
+            "id": 5,
+            "name": "Influenza",
+            "severity_level": "moderate",
+            "icd_10_code": "J10.1",
+            "description": "Seasonal flu with fever, aches, and cough"
+          }
+        ],
+        "Seasonal": [
+          {
+            "id": 6,
+            "name": "Allergic Rhinitis",
+            "severity_level": "mild",
+            "icd_10_code": "J30.9",
+            "description": "Seasonal allergy causing sneezing and nasal irritation"
+          },
+          {
+            "id": 17,
+            "name": "Dehydration",
+            "severity_level": "moderate",
+            "icd_10_code": "E86.0",
+            "description": "Fluid depletion, often more common in hot weather"
+          },
+          {
+            "id": 16,
+            "name": "Heat Exhaustion",
+            "severity_level": "moderate",
+            "icd_10_code": "T67.5",
+            "description": "Heat-related condition with dehydration and weakness"
+          },
+          {
+            "id": 7,
+            "name": "Seasonal Allergy",
+            "severity_level": "mild",
+            "icd_10_code": "J30.2",
+            "description": "Pollen-related allergy symptoms during seasonal changes"
+          }
+        ]
+      }
+    },
+    "get_symptoms": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 4.16,
+      "payload": [
+        {
+          "id": 16,
+          "name": "Abdominal Pain",
+          "description": "Pain in stomach area",
+          "body_part": "Abdomen"
+        },
+        {
+          "id": 17,
+          "name": "Diarrhea",
+          "description": "Frequent loose stools",
+          "body_part": "Abdomen"
+        },
+        {
+          "id": 14,
+          "name": "Nausea",
+          "description": "Feeling of wanting to vomit",
+          "body_part": "Abdomen"
+        },
+        {
+          "id": 15,
+          "name": "Vomiting",
+          "description": "Forceful emptying of stomach",
+          "body_part": "Abdomen"
+        },
+        {
+          "id": 21,
+          "name": "Chest Tightness",
+          "description": "Pressure or tightness in chest",
+          "body_part": "Chest"
+        },
+        {
+          "id": 9,
+          "name": "Cough",
+          "description": "Persistent cough",
+          "body_part": "Chest"
+        },
+        {
+          "id": 23,
+          "name": "Shortness of Breath",
+          "description": "Difficulty breathing",
+          "body_part": "Chest"
+        },
+        {
+          "id": 22,
+          "name": "Wheezing",
+          "description": "Whistling sound while breathing",
+          "body_part": "Chest"
+        },
+        {
+          "id": 20,
+          "name": "Eye Discharge",
+          "description": "Sticky or watery eye discharge",
+          "body_part": "Eyes"
+        },
+        {
+          "id": 11,
+          "name": "Itchy Eyes",
+          "description": "Eye irritation with itching",
+          "body_part": "Eyes"
+        },
+        {
+          "id": 19,
+          "name": "Red Eyes",
+          "description": "Eye redness",
+          "body_part": "Eyes"
+        },
+        {
+          "id": 3,
+          "name": "Body Ache",
+          "description": "Muscle and joint ache",
+          "body_part": "General"
+        },
+        {
+          "id": 10,
+          "name": "Chills",
+          "description": "Feeling cold with shivering",
+          "body_part": "General"
+        },
+        {
+          "id": 25,
+          "name": "Excessive Thirst",
+          "description": "Persistent and increased thirst",
+          "body_part": "General"
+        },
+        {
+          "id": 4,
+          "name": "Fatigue",
+          "description": "Unusual tiredness and low energy",
+          "body_part": "General"
+        },
+        {
+          "id": 1,
+          "name": "Fever",
+          "description": "Elevated body temperature",
+          "body_part": "General"
+        },
+        {
+          "id": 12,
+          "name": "Joint Pain",
+          "description": "Pain in joints",
+          "body_part": "General"
+        },
+        {
+          "id": 18,
+          "name": "Loss of Appetite",
+          "description": "Reduced desire to eat",
+          "body_part": "General"
+        },
+        {
+          "id": 26,
+          "name": "Muscle Cramps",
+          "description": "Sudden painful muscle contractions",
+          "body_part": "General"
+        },
+        {
+          "id": 24,
+          "name": "Dizziness",
+          "description": "Feeling lightheaded or unsteady",
+          "body_part": "Head"
+        },
+        {
+          "id": 2,
+          "name": "Headache",
+          "description": "Persistent head pain",
+          "body_part": "Head"
+        },
+        {
+          "id": 27,
+          "name": "Sensitivity to Light",
+          "description": "Discomfort in bright light",
+          "body_part": "Head"
+        },
+        {
+          "id": 6,
+          "name": "Nasal Congestion",
+          "description": "Blocked or stuffy nose",
+          "body_part": "Nose"
+        },
+        {
+          "id": 5,
+          "name": "Runny Nose",
+          "description": "Nasal discharge",
+          "body_part": "Nose"
+        },
+        {
+          "id": 7,
+          "name": "Sneezing",
+          "description": "Repeated sneezing episodes",
+          "body_part": "Nose"
+        },
+        {
+          "id": 13,
+          "name": "Rash",
+          "description": "Skin irritation or eruptions",
+          "body_part": "Skin"
+        },
+        {
+          "id": 8,
+          "name": "Sore Throat",
+          "description": "Pain or irritation in throat",
+          "body_part": "Throat"
+        }
+      ]
+    },
+    "diagnose": {
+      "ok": false,
+      "status_code": 500,
+      "elapsed_ms": 13933.5,
+      "payload": {
+        "raw": "Internal Server Error"
+      }
+    },
+    "medicine_recommendations": {
+      "ok": true,
+      "status_code": 200,
+      "elapsed_ms": 10215.5,
+      "payload": {
+        "catalog_recommendations": [
+          {
+            "id": 3,
+            "name": "Amlodipine",
+            "generic_name": "Amlodipine",
+            "category": "Prescription",
+            "disease_id": 3,
+            "dosage": "5 mg",
+            "frequency": "Once daily",
+            "duration": "As prescribed",
+            "side_effects": [
+              "ankle swelling",
+              "dizziness"
+            ],
+            "contraindications": [
+              "severe hypotension"
+            ],
+            "age_restrictions": "Adult use",
+            "pregnancy_safe": false,
+            "price_inr": 70.0,
+            "prescription_required": true
+          }
+        ],
+        "recommended_medicines": [
+          {
+            "medicine_name": "Amlodipine",
+            "dosage": "5 mg",
+            "frequency": "Once daily",
+            "duration": "As prescribed",
+            "notes": "Prescription required"
+          }
+        ],
+        "ai_recommendations": "Fallback medicine guidance for diagnosis 'viral fever with headache' (age 34). Use only clinician-approved treatment, consider symptom-relief OTC options where appropriate, and seek urgent care if red-flag symptoms appear. Avoid known allergens: none.",
+        "safety_note": "AI guidance is assistive only; final prescription must be clinician-approved.",
+        "warnings": [
+          "AI guidance is assistive only; final prescription must be clinician-approved.",
+          "Allergy alert: avoid compounds related to none."
+        ]
+      }
+    }
+  },
+  "overall": {
+    "total_steps": 6,
+    "passed_count": 5,
+    "failed_count": 1,
+    "passed_steps": [
+      "login",
+      "seed_catalog",
+      "get_diseases",
+      "get_symptoms",
+      "medicine_recommendations"
+    ],
+    "failed_steps": [
+      "diagnose"
+    ],
+    "fallback_detected": true
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "generated_at_utc": "2026-04-19T16:41:49.903148+00:00",
+  "host": "127.0.0.1",
+  "port": 8002,
+  "iterations_per_mode": 1,
+  "knowledge_path": "C:\\Users\\devil\\Documents\\trae_projects\\prag 2.0\\pragyantra\\Hackathon\\backend\\data\\medical_knowledge",
+  "modes": {
+    "fallback": {
+      "mode": "fallback",
+      "enable_enhanced_rag": false,
+      "expected_fallback_detected": true,
+      "iterations": 1,
+      "passed_runs": 1,
+      "success_rate": 1.0,
+      "avg_total_elapsed_ms": 288.46,
+      "p50_total_elapsed_ms": 288.46,
+      "p95_total_elapsed_ms": 288.46,
+      "step_latency_summary_ms": {
+        "login": {
+          "avg_ms": 228.69,
+          "p50_ms": 228.69,
+          "p95_ms": 228.69
+        },
+        "seed_catalog": {
+          "avg_ms": 16.95,
+          "p50_ms": 16.95,
+          "p95_ms": 16.95
+        },
+        "get_diseases": {
+          "avg_ms": 4.14,
+          "p50_ms": 4.14,
+          "p95_ms": 4.14
+        },
+        "get_symptoms": {
+          "avg_ms": 3.57,
+          "p50_ms": 3.57,
+          "p95_ms": 3.57
+        },
+        "diagnose": {
+          "avg_ms": 31.49,
+          "p50_ms": 31.49,
+          "p95_ms": 31.49
+        },
+        "medicine_recommendations": {
+          "avg_ms": 3.62,
+          "p50_ms": 3.62,
+          "p95_ms": 3.62
+        }
+      },
+      "runs": [
+        {
+          "iteration": 1,
+          "pass": true,
+          "exit_code": 2,
+          "failed_count": 0,
+          "fallback_detected": true,
+          "total_elapsed_ms": 288.46,
+          "report_path": "C:\\Users\\devil\\Documents\\trae_projects\\prag 2.0\\pragyantra\\Hackathon\\reports\\tmp_rag_benchmark\\fallback_iter_1.json"
+        }
+      ]
+    },
+    "full_rag": {
+      "mode": "full_rag",
+      "enable_enhanced_rag": true,
+      "expected_fallback_detected": false,
+      "iterations": 1,
+      "passed_runs": 1,
+      "success_rate": 1.0,
+      "avg_total_elapsed_ms": 34209.84,
+      "p50_total_elapsed_ms": 34209.84,
+      "p95_total_elapsed_ms": 34209.84,
+      "step_latency_summary_ms": {
+        "login": {
+          "avg_ms": 216.92,
+          "p50_ms": 216.92,
+          "p95_ms": 216.92
+        },
+        "seed_catalog": {
+          "avg_ms": 17.38,
+          "p50_ms": 17.38,
+          "p95_ms": 17.38
+        },
+        "get_diseases": {
+          "avg_ms": 3.39,
+          "p50_ms": 3.39,
+          "p95_ms": 3.39
+        },
+        "get_symptoms": {
+          "avg_ms": 3.6,
+          "p50_ms": 3.6,
+          "p95_ms": 3.6
+        },
+        "diagnose": {
+          "avg_ms": 20285.86,
+          "p50_ms": 20285.86,
+          "p95_ms": 20285.86
+        },
+        "medicine_recommendations": {
+          "avg_ms": 13682.69,
+          "p50_ms": 13682.69,
+          "p95_ms": 13682.69
+        }
+      },
+      "runs": [
+        {
+          "iteration": 1,
+          "pass": true,
+          "exit_code": 0,
+          "failed_count": 0,
+          "fallback_detected": false,
+          "total_elapsed_ms": 34209.84,
+          "report_path": "C:\\Users\\devil\\Documents\\trae_projects\\prag 2.0\\pragyantra\\Hackathon\\reports\\tmp_rag_benchmark\\full_rag_iter_1.json"
+        }
+      ]
+    }
+  }
+}

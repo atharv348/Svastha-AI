@@ -1,0 +1,17 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "vite",
+  "env": {
+    "VITE_API_BASE_URL": "@vite-api-base-url"
+  },
+  "envPrefix": "VITE_",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://pragyantra-backend.onrender.com/:path*"
+    }
+  ]
+}

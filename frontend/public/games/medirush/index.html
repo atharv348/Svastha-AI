@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Run - SvasthaAI Health Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- The Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- HUD (Heads Up Display) -->
+        <div id="hud" class="hidden">
+            <div class="stats-container glass-panel">
+                <div class="score-display">Score: <span id="scoreVal">0</span></div>
+                <div class="distance-display">Distance: <span id="distVal">0</span>m</div>
+                <div class="combo-display hidden">Combo x<span id="comboVal">1</span>!</div>
+            </div>
+            
+            <div class="vitals-container glass-panel">
+                <div class="vital-bar">
+                    <span class="vital-icon">❤️</span>
+                    <div class="bar-bg"><div class="bar-fill health-fill" id="healthBar"></div></div>
+                </div>
+                <div class="vital-bar">
+                    <span class="vital-icon">💧</span>
+                    <div class="bar-bg"><div class="bar-fill hydro-fill" id="hydroBar"></div></div>
+                </div>
+                <div class="vital-bar">
+                    <span class="vital-icon">⚡</span>
+                    <div class="bar-bg"><div class="bar-fill energy-fill" id="energyBar"></div></div>
+                </div>
+            </div>
+
+            <div class="quest-container glass-panel">
+                <div class="quest-title">Active Quest</div>
+                <div class="quest-desc" id="questDesc">Nutrient Hunter: 0/20</div>
+            </div>
+        </div>
+
+        <!-- Main Menu Overlay -->
+        <div id="main-menu" class="overlay glass-panel-large">
+            <h1 class="game-title">VITAL RUN</h1>
+            <p class="subtitle">A SvasthaAI Journey</p>
+            
+            <div class="menu-content">
+                <p class="instructions">
+                    <strong>Controls:</strong><br>
+                    [Space / Up] - Jump (Double tap for Double Jump)<br>
+                    [Down] - Slide<br>
+                    [P] - Pause
+                </p>
+                <p class="objective">
+                    Dodge viruses & junk food.<br>Collect fruits & water to survive!
+                </p>
+                
+                <div class="settings-group">
+                    <div class="setting-item">
+                        <label for="difficultySelect">Difficulty:</label>
+                        <select id="difficultySelect">
+                            <option value="easy">Easy</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label for="levelSelect">Level:</label>
+                        <select id="levelSelect">
+                            <option value="1">Level 1 (Bloodstream)</option>
+                            <option value="2">Level 2 (Neural Network)</option>
+                            <option value="3">Level 3 (Respiratory Tract)</option>
+                            <option value="4">Level 4 (Digestive System)</option>
+                            <option value="5">Level 5 (Immune System)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="startBtn" class="primary-btn">Start Run</button>
+            </div>
+        </div>
+
+        <!-- Pause Menu Overlay -->
+        <div id="pause-menu" class="overlay glass-panel-large hidden">
+            <h2>PAUSED</h2>
+            <button id="resumeBtn" class="primary-btn">Resume</button>
+            <button id="quitBtn" class="secondary-btn">Quit to Menu</button>
+        </div>
+
+        <!-- Game Over Overlay -->
+        <div id="game-over" class="overlay glass-panel-large hidden">
+            <h2 class="game-over-title">RUN ENDED</h2>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <span class="label">Final Score:</span>
+                    <span class="value" id="finalScore">0</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Distance:</span>
+                    <span class="value" id="finalDist">0</span>m
+                </div>
+                <div class="result-item">
+                    <span class="label">XP Earned:</span>
+                    <span class="value xp-text" id="earnedXP">+0 XP</span>
+                </div>
+            </div>
+
+            <div class="health-tip glass-panel-inner">
+                <strong>Svastha Tip:</strong>
+                <p id="healthTipText">Staying hydrated improves cognitive function by 14%!</p>
+            </div>
+
+            <button id="restartBtn" class="primary-btn">Run Again</button>
+            <button id="menuBtn" class="secondary-btn">Main Menu</button>
+        </div>
+    </div>
+
+    <!-- Scripts (Loaded in order of dependencies) -->
+    <script src="js/assets.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/entities.js"></script>
+    <script src="js/world.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

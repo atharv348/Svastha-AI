@@ -1,0 +1,113 @@
+{
+  "diabetes": {
+    "target_column": "Outcome",
+    "rows": 200,
+    "features": 8,
+    "baseline": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "brier": 0.0055825
+    },
+    "enhanced": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "brier": 0.006490000000000001
+    },
+    "improvement": {
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.0,
+      "brier": 0.0009075000000000012
+    },
+    "best_params": {
+      "class_weight": null,
+      "max_depth": null,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "n_estimators": 150
+    },
+    "enhanced_model_path": "C:\\Users\\devil\\Documents\\trae_projects\\prag 2.0\\pragyantra\\Hackathon\\models\\diabetes_enhanced_model.pkl"
+  },
+  "hypertension": {
+    "target_column": "target",
+    "rows": 200,
+    "features": 13,
+    "baseline": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "brier": 0.018315
+    },
+    "enhanced": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "brier": 0.0179
+    },
+    "improvement": {
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.0,
+      "brier": -0.00041500000000000217
+    },
+    "best_params": {
+      "class_weight": null,
+      "max_depth": null,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "n_estimators": 150
+    },
+    "enhanced_model_path": "C:\\Users\\devil\\Documents\\trae_projects\\prag 2.0\\pragyantra\\Hackathon\\models\\hypertension_enhanced_model.pkl"
+  },
+  "anemia": {
+    "target_column": "Result",
+    "rows": 200,
+    "features": 5,
+    "baseline": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "brier": 0.0034725000000000008
+    },
+    "enhanced": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "brier": 0.003297777777777777
+    },
+    "improvement": {
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.0,
+      "brier": -0.00017472222222222368
+    },
+    "best_params": {
+      "class_weight": null,
+      "max_depth": null,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "n_estimators": 150
+    },
+    "enhanced_model_path": "C:\\Users\\devil\\Documents\\trae_projects\\prag 2.0\\pragyantra\\Hackathon\\models\\anemia_enhanced_model.pkl"
+  }
+}

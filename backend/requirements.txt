@@ -1,0 +1,45 @@
+fastapi
+uvicorn
+python-jose[cryptography]
+passlib[argon2]
+bcrypt==4.0.1
+groq
+python-dotenv
+sqlalchemy
+python-multipart
+pydantic[email]
+email-validator
+# AI and Search Dependencies
+langchain-groq
+langchain-huggingface
+langchain-chroma
+langchain-community
+duckduckgo-search
+langchain
+langchain-text-splitters
+numpy
+pillow
+opencv-python-headless
+deepface
+fer
+tf-keras
+torch>=2.0.0 --index-url https://download.pytorch.org/whl/cpu
+torchvision>=0.15.0 --index-url https://download.pytorch.org/whl/cpu
+joblib
+pandas
+scikit-learn
+python-doctr
+PyPDF2
+pypdf
+reportlab
+tf2jax
+tf-keras
+
+# Enhanced training and RAG dependencies
+timm
+albumentations
+grad-cam
+chromadb
+sentence-transformers
+kaggle
+requests
