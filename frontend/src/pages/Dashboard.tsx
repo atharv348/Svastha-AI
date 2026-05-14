@@ -26,7 +26,7 @@ export default function Dashboard() {
     const reportId = `VR-${new Date().toISOString().slice(0, 10).replace(/-/g, "")}-${Math.floor(1000 + Math.random() * 9000)}`;
 
     return [
-      "VAIDYAAI - DETAILED MEDICAL REPORT",
+      "SVASTHAAI - DETAILED MEDICAL REPORT",
       `Report ID: ${reportId}`,
       `Generated: ${generatedAt}`,
       "Source: Dashboard health snapshot",
@@ -90,7 +90,7 @@ export default function Dashboard() {
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = `vaidyaai-detailed-medical-report-${new Date().toISOString().slice(0, 10)}.txt`;
+    anchor.download = `svasthaai-detailed-medical-report-${new Date().toISOString().slice(0, 10)}.txt`;
     anchor.click();
     URL.revokeObjectURL(url);
   };

@@ -321,7 +321,7 @@ export default function MealPlan() {
           
           <p className="text-[10px] text-center text-muted-foreground flex items-center justify-center gap-1">
             <Info size={10} />
-            VaidyaAI can provide health advice but always consult a professional for medical changes.
+            SvasthaAI can provide health advice but always consult a professional for medical changes.
           </p>
         </div>
       </div>

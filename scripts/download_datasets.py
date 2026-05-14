@@ -5,7 +5,7 @@ import subprocess
 from pathlib import Path
 
 
-class VaidyaAIDatasetManager:
+class SvasthaAIDatasetManager:
     """Download and prepare datasets for multi-organ model training."""
 
     def __init__(self, base_path: str = "./datasets") -> None:
@@ -115,7 +115,7 @@ class VaidyaAIDatasetManager:
 
     def run_all(self) -> None:
         print("=" * 60)
-        print("VAIDYAAI DATASET PREPARATION")
+        print("SVASTHAAI DATASET PREPARATION")
         print("=" * 60)
 
         self.download_image_datasets()
@@ -130,5 +130,5 @@ if __name__ == "__main__":
     print("2) Place it in ~/.kaggle/kaggle.json")
     print("3) Set permissions accordingly")
 
-    manager = VaidyaAIDatasetManager()
+    manager = SvasthaAIDatasetManager()
     manager.run_all()

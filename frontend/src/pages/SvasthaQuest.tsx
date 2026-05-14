@@ -115,7 +115,7 @@ function formatQuestProgress(quest: QuestItem): string {
   return `${Math.floor(quest.progress)} / ${Math.floor(quest.target)}`;
 }
 
-export default function VaidyaQuest() {
+export default function SvasthaQuest() {
   const [state, setState] = useState<GameState | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -135,7 +135,7 @@ export default function VaidyaQuest() {
       setState(response.data);
     } catch (err: any) {
       const detail = err?.response?.data?.detail;
-      setError(typeof detail === "string" ? detail : "Unable to load VaidyaQuest right now.");
+      setError(typeof detail === "string" ? detail : "Unable to load SvasthaQuest right now.");
     } finally {
       setLoading(false);
     }

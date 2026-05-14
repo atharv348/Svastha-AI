@@ -69,7 +69,7 @@ def extract_ids_from_symptoms(payload: Any) -> list[int]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run authenticated smoke tests for enhanced VaidyaAI routes")
+    parser = argparse.ArgumentParser(description="Run authenticated smoke tests for enhanced SvasthaAI routes")
     parser.add_argument("--base-url", default="http://127.0.0.1:8002", help="Base API URL")
     parser.add_argument("--username", default="admin", help="Login username")
     parser.add_argument("--password", default="admin123", help="Login password")
